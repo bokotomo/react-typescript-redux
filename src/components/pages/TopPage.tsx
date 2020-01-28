@@ -1,9 +1,11 @@
 import React from 'react'
-import { TextInput } from '../organisms/TextInput';
 import { TopPageHandler } from '../../containers/TopPageContainer';
-import { RadioInput } from '../organisms/RadioInput';
-import { ShowState } from '../organisms/ShowState';
-import { SubmitButton } from '../organisms/SubmitButton';
+import { Header } from '../organisms/Header';
+import { Contents } from '../organisms/Contents';
+import { TextInput } from '../molecules/TextInput';
+import { RadioInput } from '../molecules/RadioInput';
+import { ShowState } from '../molecules/ShowState';
+import { SubmitButton } from '../molecules/SubmitButton';
 
 interface OwnProps {
     inputValue: string
@@ -15,6 +17,8 @@ export class TopPage extends React.Component<Props> {
     render() {
         return (
             <React.Fragment>
+                <Header title="Logo" />
+                <Contents />
                 <TextInput title='入力' inputValue={this.props.inputValue} onChangeValue={this.props.handleOnChangeValue} />
                 <RadioInput title='ラジオ' selectedValue={this.props.selectedValue} onChangeValue={this.props.handleOnSelectValue} />
                 <SubmitButton title='Click me' onClick={this.props.handleOnClick} />
