@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+    react-app:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      container_name: "react-app"
+      volumes:
+        - ../../:/src
+      tty: true
+      expose:
+        - 80
+      privileged: true
